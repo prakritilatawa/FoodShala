@@ -22,8 +22,6 @@ Route::get('/menu/create', 'App\Http\Controllers\MenuController@create')->middle
 Route::post('menu', 'App\Http\Controllers\MenuController@store');
 Route::get('/menu/{id}', 'App\Http\Controllers\MenuController@show')->middleware('auth');
 Route::delete('/menu/{id}', 'App\Http\Controllers\MenuController@destroy')->middleware('auth');
-Auth::routes([
-    'register' => false
-]);
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
